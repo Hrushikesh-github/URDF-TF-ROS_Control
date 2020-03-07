@@ -1,0 +1,9 @@
+<launch>
+<include file="$(find my_mira_description)/launch/spawn_urdf.launch">
+    <arg name="x" value="0.0"/>
+    <arg name="y" value="0.0"/>
+    <arg name="z" value="0.2"/>
+    <arg name="robot_name" value="mira"/>
+    <arg name="urdf_file" value="$(find my_mira_description)/urdf/other.urdf"/>
+</include>
+</launch>

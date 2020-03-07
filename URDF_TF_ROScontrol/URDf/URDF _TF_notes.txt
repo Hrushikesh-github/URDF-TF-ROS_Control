@@ -1,0 +1,22 @@
+1.So we start with <robot name=""> tag,then links,joints.
+2.The most confusing is origins.So when u define origin in joint, u are defining the link's origin w.r.t the parent link's origin. This is also the place where the child and parent link meet. But the origins mentioned in the collision or visual or inertial are origins of their own kind like Visual origin Collision origin.http://wiki.ros.org/urdf/XML/link refer diagram.
+3.Launching the urdf in Rviz: check the file 'basic_urdf_in_rviz.launch'
+4.Simply launching the URDF in the "robot_description" parameter gives error because no tf data is available,so RVIZ cannot connect diff links and joints,hence not possible to visualize robot.
+ROS gives a nice tool called "robot_state_publisher" which takes the "robot_description" and automatically publishes tf for u.
+5.However joints which r not fixed, have not been specified any joint values, so our description of robot is incomplete, so we send some values using the joint_state_publisher node in the launch file.Infact it actually starts a topic and we use GUI to control the robot.
+6.Launching URDF in Gazebo: 
+  1.Make sure gazebo is running. U can launch it using 'roslaunch gazebo_ros empty_world.launch'
+  2. So u can make a launch file, similar to the one in made.  
+7. Deleting a model in Gazebo:rosservice call /gazebo/delete_model "model_name: 'mira'
+8.the data published into the /tf topic is nothing more than where each frame is in reference to its parent frame in space.
+
+This allows you to then use that information and calculate the transfrom between any frame inside the same tf_tree. If they are in different trees, TF won't be able to calculate the transform between them.
+9. Various ways of seeing the tf tree:
+  1. 'rosrun rqt_tf_tree rqt_tf_tree'
+  2. In topic /tf, all TFs are published,so echoing is a problem. However, rosrun tf tf_echo frame1 frame2 gives the tf data(even if they are not under the same tree)
+  3. rosrun tf view_frames pdf will be generated,check it
+10. Check how to make tf broadcaster and others from tf wiki
+11. Static Transform Publisher: rosrun tf static_transform_publisher x y z yaw pitch roll frame_id child_frame_id period_in_ms, a temporary tree created.
+
+1.In 5, the other and best way to have joint state values is through readings in hardware.In case of Gazebo simulations, u have to use "controller_manager" ROS package.It allows u to simulate diff PID controls.
+ 
