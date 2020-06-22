@@ -32,6 +32,7 @@ Packages related to URDF, TF and ROS_Control. Written in python
 ![sin_moves](https://user-images.githubusercontent.com/56476887/85287741-587d3380-b4b2-11ea-8b22-6c3f81bbc8e0.gif)
 
 ### Similarly, custom (position) controllers for the UR5 robot was created and a launch file to position the UR5 in a specific position. 
+<img width="407" alt="quiz_custom_controller" src="https://user-images.githubusercontent.com/56476887/85288817-fb827d00-b4b3-11ea-8110-df4669d25735.png">
 
 
 
