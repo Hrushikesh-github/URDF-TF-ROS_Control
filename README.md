@@ -13,7 +13,7 @@ Packages related to URDF, TF and ROS_Control. Written in python
 
 
 ### pi robot launched in gazebo with few joints activated by running publishing to it's topics
-![pi_robot_moving](https://user-images.githubusercontent.com/56476887/85285334-5fa24280-b4ae-11ea-8b92-8998a8e7cb54.gif img width="400")
+![pi_robot_moving](https://user-images.githubusercontent.com/56476887/85285334-5fa24280-b4ae-11ea-8b92-8998a8e7cb54.gif)
 
 
 ### tf will not be published if robot_state_publisher is not launched, thus we fail to obtain the pi robot in rviz 
